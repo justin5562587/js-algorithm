@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "clear && node index.js"
+    "test": "clear && node index.js",
+    "test1": "clear && node ./algorithm2/divideConquer.js"
   },
   "type": "module",
   "author": "",
