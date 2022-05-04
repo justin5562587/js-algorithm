@@ -1,3 +1,6 @@
+// 冒泡排序
+// 复习次数1
+
 const bubbleSort = arr => {
     if (!arr || arr.length <= 1) {
         return arr;
@@ -19,14 +22,15 @@ const bubbleSort2 = arr => {
         return arr;
     }
 
-    let N = arr.length;
-    for (let end = N - 1; end >=0; end--) {
-        for (let second = 1; second <= end; second++) {
-            if (arr[second - 1] > arr[second]) {
-                swap(arr, second - 1, second);
+    for (let end = arr.length - 1; end > 0; end--) {
+        for (let i = 0; i < end; i++) {
+            if (arr[i] > arr[i + 1]) {
+                swap(arr, i, i + 1);
             }
         }
     }
+
+    return arr;
 };
 
 const swap = (arr, i, j) => {
