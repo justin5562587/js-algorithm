@@ -5,7 +5,7 @@ const binaryFind = (sortedArr, num) => {
     let L = 0;
     let R = sortedArr.length - 1;
     while (L <= R) {
-        let mid = Math.floor((L + R) / 2);
+        let mid = L + ((R - L) >> 1);
         if (sortedArr[mid] === num) {
             return mid;
         } else if (sortedArr[mid] > num) {
