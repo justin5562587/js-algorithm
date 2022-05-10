@@ -1,4 +1,5 @@
 // 栈的实现
+// FILO(first in last out)先进后出
 class Stack {
     constructor( ) {
         this.content = [];
