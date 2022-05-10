@@ -6,7 +6,8 @@
   "scripts": {
     "test": "clear && node index.js",
     "test1": "clear && node ./algorithm2/divideConquer.js",
-    "hanoi": "clear && node ./hanoi/hanoi.js"
+    "hanoi": "clear && node ./hanoi/hanoi.js",
+    "stack": "clear && node ./structure/stack.js"
   },
   "type": "module",
   "author": "",
