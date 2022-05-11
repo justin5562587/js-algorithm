@@ -37,28 +37,29 @@ class Stack {
     }
 }
 
+export default Stack;
 
 // for test
-let stack = new Stack();
-console.log(stack.isEmpty());
+// let stack = new Stack();
+// console.log(stack.isEmpty());
 
-stack.push("justin001");
-stack.push("justin002");
-stack.push("justin003");
+// stack.push("justin001");
+// stack.push("justin002");
+// stack.push("justin003");
 
-console.log(stack.pop());
-console.log(stack.size())
+// console.log(stack.pop());
+// console.log(stack.size())
 
-console.log(stack.peek());
-console.log(stack.size());
+// console.log(stack.peek());
+// console.log(stack.size());
 
-console.log(stack.pop());
-console.log(stack.size())
+// console.log(stack.pop());
+// console.log(stack.size())
 
-console.log(stack.pop());
-console.log(stack.size());
+// console.log(stack.pop());
+// console.log(stack.size());
 
-console.log(stack.pop());
+// console.log(stack.pop());
 
 
 

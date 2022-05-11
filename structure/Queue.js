@@ -38,3 +38,5 @@ class Queue {
         return this.content.length === 0;
     }
 }
+
+export default Queue;
