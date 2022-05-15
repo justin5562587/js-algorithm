@@ -31,4 +31,33 @@ const walk = (N, restStep, currentPos, targetPos) => {
     return walk(N, restStep, currentPos - 1, targetPos) + walk(N, restStep, currentPos + 1, targetPos);
 };
 
+// --------------------使用缓存避免重复计算
+const getRobotWalkWithCache = (N, restStep, startPos, targetPos) => {
+    // 因为只有N restStep这两个可变参数，所以设置一个二维数组的缓存表，避免重复计算
+    let cache = new Array(N + 1);
+    cache.fill(new Array(restStep + 1));
+};
+
+const walkWithCache = (N, restStep,currentPos, targetPos, cache) => {
+    if (cache[restStep][currentPos] !== -1) {
+        return cache[restStep][currentPos];
+    }
+};
+
+// --------------------使用动态缓存法直接推算出并填充所有缓存表的方法
+const getRobotWalkWithDP = (N, restStep, startPos, targetPos) => {
+    let cache = new Array(N + 1);
+    cache.fill(new Array(restStep + 1));
+
+    
+
+};
+
+const dp = () => {
+
+};
+
 getRobotWalk(5, 4, 3, 3);
+
+
+
