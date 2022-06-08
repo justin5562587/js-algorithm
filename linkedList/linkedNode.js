@@ -8,7 +8,7 @@ class SNode {
 class DNode {
     constructor() {
         this.value = value;
-        this.last = null;
+        this.prev = null;
         this.next = null; 
     }
 }

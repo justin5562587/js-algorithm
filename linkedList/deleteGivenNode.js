@@ -47,7 +47,7 @@ const deleteDoubleLinkedListNode = (head, nodeValue) => {
         if (cur.value === nodeValue) {
             if (cur.next !== null) {
                 pre.next = cur.next;
-                cur.next.last = pre;
+                cur.next.prev = pre;
             } else {
                 pre.next = null;
             }
