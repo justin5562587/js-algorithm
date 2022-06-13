@@ -50,4 +50,40 @@ const mergeTwoLists = (l1, l2) => {
     return head.next;
 };
 
+// 递归进行partition
+var mergeKLists = function(lists) {
+    if (!lists) {
+        return lists;
+    }
 
+    if (lists.length === 1) {
+        return lists[0];
+    }
+
+    return process(lists, 0, lists.length - 1);
+};
+
+const process = (lists, L, R) => {
+    if (L > R) return null;
+    if (L === R) return lists[L];
+
+    // L < R
+    let mid = L + ((R - L) >> 1);
+    let a = process(lists, L, mid);
+    let b = process(lists, mid + 1, R);
+    let dummy = new ListNode('dummy');
+    let current = dummy;
+    while (a && b) {
+        if (a.val < b.val) {
+            current.next = a;
+            a = a.next;
+        } else {
+            current.next = b;
+            b = b.next;
+        }
+        current = current.next;
+    }
+    current.next = a || b;
+    
+    return dummy.next;
+};
