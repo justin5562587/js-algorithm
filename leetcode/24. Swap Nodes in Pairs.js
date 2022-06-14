@@ -18,30 +18,29 @@
     }
 
     let dummy = new ListNode('dummy', head);
-    let index = dummy;
+    let current = dummy;
     let pairFirst = null; // 需要交换的两个节点的前一个
     let pairSecond = null; // 需要交换的两个节点的后一个
     let pairHead = null; // 需进行交换的两个节点的再前面一个
     let pairTail = null; // 需进行交换的两个节点的再后面一个
 
-    let time = 0;
-    while (index !== null) {
-        console.log(`${++time} index=${index.val}`);
+    while (current !== null) {
+        // console.log(`${++time} current=${current.val}`);
         // 走第一步
-        if (index.next === null) {
+        if (current.next === null) {
             break;
         }
-        pairHead = index;
-        index = index.next;
-        pairFirst = index;
+        pairHead = current;
+        current = current.next;
+        pairFirst = current;
 
         // 走第二步
-        if (index.next === null) {
+        if (current.next === null) {
             break;
         }
-        index = index.next;
-        pairSecond = index;
-        pairTail = index.next;
+        current = current.next;
+        pairSecond = current;
+        pairTail = current.next;
 
         // 交换逻辑
         // l1 l2 l3 l4
@@ -53,7 +52,8 @@
         pairFirst.next = pairTail;
         pairSecond.next = pairFirst;
 
-        index = pairFirst;
+        // 因为交换后，第一个节点变成了第二个节点，重新设置current
+        current = pairFirst;
     }
 
     return dummy.next;
