@@ -5,6 +5,7 @@
  * @param {number} n
  * @return {string[]}
  */
+// 暴力递归
 var generateParenthesis = function(n) {
     if (n < 1) return [];
 
@@ -37,3 +38,29 @@ const isValid = (str) => {
 
     return arr.length === 0;
 };
+
+// 方法二 增加了递归中的限制条件，减少无效递归
+var generateParenthesis2 = function(n) {
+    if (n < 1) return [];
+
+    let ans = [];
+    processWithCondition('', 0, 0, n, ans);
+    return ans;
+};
+
+const processWithCondition = (str, open, close, n, ans) => {
+    if (str.length === 2 * n) {
+        console.log(str)
+        ans.push(str);
+        return;
+    }
+
+    if (open < n) {
+        processWithCondition(str + '(', open + 1, close, n, ans);
+    }
+    if (close < open) {
+        processWithCondition(str + ')', open, close + 1, n, ans);
+    }
+};
+
+generateParenthesis2(3)
