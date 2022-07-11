@@ -30,5 +30,23 @@ const process = (index, currentValue, nums, ans)=> {
 // test
 subsets([1,2,3]);
 
+
 // Input: nums = [1,2,3]
 // Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+// 通过设置位掩码来尝试解决
+var subsets = function(nums) {
+    const ans = [];
+    const n = nums.length;
+    for (let mask = 0; mask < (1 << n); ++mask) {
+        const t = [];
+        for (let i = 0; i < n; ++i) {
+            if (mask & (1 << i)) {
+                t.push(nums[i]);
+            }
+        }
+        ans.push(t);
+    }
+    return ans;
+};
+
+subsets([1,2,3]);
